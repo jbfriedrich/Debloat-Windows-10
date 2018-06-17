@@ -4,24 +4,25 @@
 # into your default drive's root directory.
 
 $packages = @(
-    "notepadplusplus.install"
+    # "notepadplusplus.install"
     "atom"
     "sublimetext3"
+    "pycharm-community"
     # "docker"
     "docker-for-windows"
     "calibre"
     "slack"
     "dropbox"
-    "7zip.install"
+    "winrar"
     "google-chrome-x64"
-    "putty"
+    # "putty"
     "python"
     "sysinternals"
     "vlc"
     "windirstat"
     "wireshark"
     "youtube-dl"
-    "pycharm-community"
+    "wintail"
 )
 
 echo "Setting up Chocolatey software package manager"
@@ -44,6 +45,7 @@ $ScheduledJob = @{
 Register-ScheduledJob @ScheduledJob
 
 echo "Installing Packages"
+choco feature enable -n allowGlobalConfirmation
 $packages | %{choco install $_ --force -y}
 
 echo "Installing Sysinternals Utilities to C:\Sysinternals"
