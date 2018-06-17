@@ -8,6 +8,7 @@ $packages = @(
     "atom"
     "sublimetext3"
     "pycharm-community"
+    "git.install"
     # "docker"
     "docker-for-windows"
     "calibre"
